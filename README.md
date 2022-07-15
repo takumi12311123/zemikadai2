@@ -21,3 +21,6 @@
 
 ### seedのデータを変えて入れなおす時
 ```npx prisma migrate reset```
+
+### localhostを立ち上げるとき
+```npm run start:dev```
