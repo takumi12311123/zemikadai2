@@ -8,6 +8,9 @@
 ### compose up
 ```docker-compose up```
 
+### dockerとめかた
+```sudo service docker stop```
+
 # backendについて
 
 ### prisma studioの起動
