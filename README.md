@@ -23,6 +23,6 @@
 ```npx prisma migrate reset```
 
 ### localhostを立ち上げるとき
-```npm run start:dev```
-[playground](http://localhost:3000/graphql)
-[localhost](http://localhost:3000)
+```npm run start:dev```<br>
+[playground](http://localhost:3000/graphql)<br>
+[localhost](http://localhost:3000)<br>
