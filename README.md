@@ -8,7 +8,7 @@
 ### compose up
 ```docker-compose up```
 
-### dockerとめかた
+### docker stop
 ```sudo service docker stop```
 
 # backendについて
