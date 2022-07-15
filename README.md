@@ -24,3 +24,5 @@
 
 ### localhostを立ち上げるとき
 ```npm run start:dev```
+[playground](http://localhost:3000/graphql)
+[localhost](http://localhost:3000)
