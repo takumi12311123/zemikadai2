@@ -1,5 +1,13 @@
 # zemikadai2
 
+# dockerについて
+
+### docker start
+```sudo service docker start```
+
+### compose up
+```docker-compose up```
+
 # backendについて
 
 ### prisma studioの起動
