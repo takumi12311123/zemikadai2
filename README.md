@@ -26,3 +26,16 @@
 ```npm run start:dev```<br>
 [playground](http://localhost:3000/graphql)<br>
 [localhost](http://localhost:3000)<br>
+
+# frontend
+
+### localhostを立ち上げるとき(localhost:3001を使ってください)
+```npm start```
+:::note warn
+backendを立ち上げてからじゃないと動きません
+gqlの接続先を
+```
+https://localhost:3000/graphql
+```
+にしているからです
+:::
