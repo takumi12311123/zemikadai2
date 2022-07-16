@@ -37,3 +37,8 @@ gqlの接続先を<br>
 https://localhost:3000/graphql<br>
 にしているからです
 :::
+
+:::note info
+インフォメーション
+infoは省略可能です。
+:::
