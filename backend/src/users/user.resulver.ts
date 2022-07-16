@@ -8,7 +8,10 @@ import { CurrentUser } from 'src/auth/current-user.decorator';
 
 @Resolver(() => User)
 export class UsersResolver {
-  constructor(private prisma: PrismaService, private usersService: UsersService) {}
+  constructor(
+    private prisma: PrismaService,
+    private usersService: UsersService,
+  ) {}
 
   @Query(() => String)
   sayHello(): string {
@@ -34,7 +37,10 @@ export class UsersResolver {
   }
 
   @Mutation(() => User)
-  updateUsers(@Args('updateUserInput') updateUserInput: UpdateUserInput, @CurrentUser() user: CurrentUser) {
+  updateUsers(
+    @Args('updateUserInput') updateUserInput: UpdateUserInput,
+    @CurrentUser() user: CurrentUser,
+  ) {
     return this.usersService.updateUsers({
       id: user.id,
       name: updateUserInput.name,
