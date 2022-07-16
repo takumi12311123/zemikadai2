@@ -1,4 +1,5 @@
 import { useQuery, gql } from "@apollo/client";
+import { create } from "domain";
 
 function Users(): any {
   const EXCHANGE_RATES = gql`
@@ -18,17 +19,13 @@ function Users(): any {
   if (error) return `Error : ${error}`;
 
   return data.users.map(({ id, name, email, createdAt, updatedAt }: any) => (
-    <>
-      <>
-        <div key={id} className="aajaa">
-          <p className="jieo">{id}</p>
-          <p className="jieo">{name}</p>
-          <p className="jieo">{email}</p>
-          <p className="jieo">{createdAt}</p>
-          <p className="jieo">{updatedAt}</p>
-        </div>
-      </>
-    </>
+    <div key={id}>
+      <p>{id}</p>
+      <p>{name}</p>
+      <p>{email}</p>
+      <p>{createdAt}</p>
+      <p>{updatedAt}</p>
+    </div>
   ));
 }
 export default Users;
