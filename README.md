@@ -32,10 +32,8 @@
 ### localhostを立ち上げるとき(localhost:3001を使ってください)
 ```npm start```
 :::note warn
-backendを立ち上げてからじゃないと動きません
-gqlの接続先を
-```
-https://localhost:3000/graphql
-```
+backendを立ち上げてからじゃないと動きません<br>
+gqlの接続先を<br>
+https://localhost:3000/graphql<br>
 にしているからです
 :::
