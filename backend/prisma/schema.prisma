@@ -14,6 +14,7 @@ model User {
   id        String     @id @default(uuid())
   email     String     @unique
   name      String     @db.VarChar(31)
+  description String     @db.VarChar(64)
   createdAt DateTime   @default(now())
   updatedAt DateTime   @updatedAt
 }
