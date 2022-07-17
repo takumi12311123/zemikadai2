@@ -33,6 +33,7 @@ export class UsersResolver {
     return this.usersService.createUsers({
       name: createUserInput.name,
       email: createUserInput.email,
+      description: createUserInput.description,
     });
   }
 
@@ -45,6 +46,7 @@ export class UsersResolver {
       id: user.id,
       name: updateUserInput.name,
       email: updateUserInput.email,
+      description: updateUserInput.description,
     });
   }
 }

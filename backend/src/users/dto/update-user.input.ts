@@ -8,4 +8,7 @@ export class UpdateUserInput {
 
   @Field(() => String)
   email!: string;
+
+  @Field(() => String)
+  description!: string;
 }
