@@ -1,6 +1,8 @@
 import { useQuery, gql } from "@apollo/client";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import { Link } from "react-bootstrap/lib/Navbar";
+import { BrowserRouter } from "react-router-dom";
 
 function Users(): any {
   const EXCHANGE_RATES = gql`
@@ -8,6 +10,7 @@ function Users(): any {
       users {
         id
         name
+        description
         email
         createdAt
         updatedAt
@@ -19,25 +22,20 @@ function Users(): any {
   if (loading) return <p>Loading...</p>;
   if (error) return `Error : ${error}`;
 
-  return data.users.map(({ id, name, email, createdAt, updatedAt }: any) => (
-    <Card style={{ width: "18rem" }} key={id}>
-      <Card.Img variant="top" src="holder.js/100px180" />
-      <Card.Body>
-        <Card.Title>{name}</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
-        <Button variant="primary">詳しく見る</Button>
-      </Card.Body>
-    </Card>
-    // <div key={id}>
-    //   <p>{id}</p>
-    //   <p>{name}</p>
-    //   <p>{email}</p>
-    //   <p>{createdAt}</p>
-    //   <p>{updatedAt}</p>
-    // </div>
-  ));
+  return data.users.map(
+    ({ id, name, email, description, createdAt, updatedAt }: any) => (
+      <BrowserRouter>
+        <Card style={{ width: "18rem" }} key={id}>
+          <Card.Img variant="top" src="holder.js/100px180" />
+          <Card.Body>
+            <Card.Title>{name}</Card.Title>
+            <Card.Text>{description}</Card.Text>
+            {/* link to でここから個人ページを見れるようにする */}
+            <Button variant="primary">詳しく見る</Button>
+          </Card.Body>
+        </Card>
+      </BrowserRouter>
+    )
+  );
 }
 export default Users;

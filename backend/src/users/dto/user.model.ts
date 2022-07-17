@@ -11,6 +11,9 @@ export class User {
   @Field(() => String)
   email: string;
 
+  @Field(() => String)
+  description: string;
+
   @Field(() => Date)
   createdAt: Date;
 
