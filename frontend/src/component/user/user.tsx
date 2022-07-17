@@ -1,5 +1,4 @@
 import { useQuery, gql } from "@apollo/client";
-import { create } from "domain";
 
 function Users(): any {
   const EXCHANGE_RATES = gql`
