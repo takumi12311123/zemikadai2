@@ -19,6 +19,9 @@
 ### migrateの切り方
 ```npx prisma migrate dev --name post```
 
+### prisma/schema.prismaを変更した時
+```npx prisma generate```
+
 ### seedのデータを変えて入れなおす時
 ```npx prisma migrate reset```
 
