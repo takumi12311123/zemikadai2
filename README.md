@@ -21,6 +21,8 @@
 
 ### prisma/schema.prismaを変更した時
 ```npx prisma generate```
+その後、データベースに変更を反映させるためのmigrateをきる
+```npx prisma migrate dev --preview-feature```
 
 ### seedのデータを変えて入れなおす時
 ```npx prisma migrate reset```
