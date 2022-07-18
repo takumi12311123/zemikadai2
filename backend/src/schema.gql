@@ -2,11 +2,10 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
-type User {
+type Article {
   id: ID!
-  name: String!
-  email: String!
-  description: String!
+  title: String!
+  detail: String!
   createdAt: DateTime!
   updatedAt: DateTime!
 }
@@ -16,15 +15,29 @@ A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date
 """
 scalar DateTime
 
+type User {
+  id: ID!
+  name: String!
+  email: String!
+  description: String!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
 type Query {
   sayHello: String!
   users: [User!]!
   getUserByEmail(email: String!): User!
+  articles: [Article!]!
+  articlesByUser: [Article!]!
+  articleDetail: Article!
 }
 
 type Mutation {
   createUsers(createUserInput: CreateUserInput!): User!
   updateUsers(updateUserInput: UpdateUserInput!): User!
+  createArticle(createArticleInput: CreateArticleInput!): Article!
+  updateArticle(updateArticleInput: CreateArticleInput!): Article!
 }
 
 input CreateUserInput {
@@ -37,4 +50,9 @@ input UpdateUserInput {
   name: String!
   email: String!
   description: String!
+}
+
+input CreateArticleInput {
+  title: String!
+  detail: String!
 }
