@@ -25,9 +25,15 @@ function Users(): any {
   return data.users.map(
     ({ id, name, email, description, createdAt, updatedAt }: any) => (
       <BrowserRouter>
-        <Card style={{ width: "18rem" }} key={id}>
+        <Card
+          style={{ width: "25rem", height: "25rem", float: "left" }}
+          key={id}
+        >
           <Card.Img variant="top" src="holder.js/100px180" />
           <Card.Body>
+            <Button variant="primary" style={{ float: "right" }}>
+              follow
+            </Button>
             <Card.Title>{name}</Card.Title>
             <Card.Text>{description}</Card.Text>
             {/* link to でここから個人ページを見れるようにする */}

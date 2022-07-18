@@ -7,11 +7,11 @@ export const Header = () => {
   return (
     <Navbar>
       <Container>
-        <Navbar.Brand href="#home">fullstack app</Navbar.Brand>
+        <Navbar.Brand href="/">fullstack app</Navbar.Brand>
         <Navbar.Toggle />
-        <Nav.Link href="#home">Home</Nav.Link>
-        <Nav.Link href="#features">Features</Nav.Link>
-        <Nav.Link href="#pricing">Pricing</Nav.Link>
+        <Nav.Link href="/">Home</Nav.Link>
+        <Nav.Link href="#features">Following</Nav.Link>
+        <Nav.Link href="#pricing">MyPage</Nav.Link>
         <Navbar.Collapse className="justify-content-end">
           <Navbar.Text>
             Signed in as: <a href="#login">{user}</a>
