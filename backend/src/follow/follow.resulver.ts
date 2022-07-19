@@ -12,9 +12,20 @@ export class FollowResolver {
     private followService: FollowService,
   ) {}
 
+  // followerの取得
   @Query(() => [Follow])
-  async followers() {
-    return this.followService.getfollowers({});
+  async followers(@CurrentUser() user: CurrentUser) {
+    return this.followService.getfollowers({
+      followerId: user.id,
+    });
+  }
+
+  // followeeの取得
+  @Query(() => [Follow])
+  async followees(@CurrentUser() user: CurrentUser) {
+    return this.followService.getfollowees({
+      followeeId: user.id,
+    });
   }
 
   @Mutation(() => Follow)

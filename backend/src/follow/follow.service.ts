@@ -5,8 +5,16 @@ import { PrismaService } from '../prisma/prisma.service';
 export class FollowService {
   constructor(private prisma: PrismaService) {}
 
-  getfollowers({}: {}) {
-    return this.prisma.follow.findMany();
+  getfollowers({ followerId }: { followerId: string }) {
+    return this.prisma.follow.findMany({
+      where: { followerId },
+    });
+  }
+
+  getfollowees({ followeeId }: { followeeId: string }) {
+    return this.prisma.follow.findMany({
+      where: { followeeId },
+    });
   }
 
   createFollow({
