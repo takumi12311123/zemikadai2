@@ -5,6 +5,7 @@ import { UsersService } from './user.service';
 import { CreateUserInput } from './dto/create-user.input';
 import { UpdateUserInput } from './dto/update-user.input';
 import { CurrentUser } from 'src/auth/current-user.decorator';
+import { Article } from 'src/article/dto/article.model';
 
 @Resolver(() => User)
 export class UsersResolver {

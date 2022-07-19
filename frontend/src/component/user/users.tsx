@@ -1,9 +1,11 @@
 import { useQuery, gql } from "@apollo/client";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import pic from "/home/takuaka/zemikadai2/frontend/src/component/images/user.png"
+// import pic from "/home/takuaka/zemikadai2/frontend/src/component/images/user.png"
+import { faker } from "@faker-js/faker";
 
 function Users(): any {
+  const pic = faker.image.avatar();
   const EXCHANGE_RATES = gql`
     query GetUsers {
       users {
