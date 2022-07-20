@@ -14,6 +14,9 @@ export class ArticleService {
       where: {
         userId,
       },
+      orderBy: {
+        createdAt: "desc",
+      },
     });
   }
 

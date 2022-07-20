@@ -1,9 +1,11 @@
 import { useQuery, gql } from "@apollo/client";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import pic from "/home/takuaka/zemikadai2/frontend/src/component/images/user.png"
+import { faker } from "@faker-js/faker";
+import { FollowButton } from "../button/FollowButton";
 
 function Users(): any {
+  const pic = faker.image.avatar();
   const EXCHANGE_RATES = gql`
     query GetUsers {
       users {
@@ -16,6 +18,7 @@ function Users(): any {
       }
     }
   `;
+
   const { loading, error, data } = useQuery(EXCHANGE_RATES);
   if (loading) return <p>Loading...</p>;
   if (error) return `Error : ${error}`;
@@ -25,9 +28,7 @@ function Users(): any {
       <Card style={{ width: "24rem", height: "35rem", float: "left" }} key={id}>
         <Card.Img variant="top" src={pic} />
         <Card.Body>
-          <Button variant="primary" style={{ float: "right" }}>
-            follow
-          </Button>
+          <FollowButton />
           <Card.Title>{name}</Card.Title>
           <Card.Text>{description}</Card.Text>
           <Button variant="primary">詳しく見る</Button>
