@@ -30,10 +30,19 @@ type User {
   updatedAt: DateTime!
 }
 
+type NumFollowers {
+  numberOfFollowers: Float!
+}
+
+type NumFollowings {
+  numberOfFollowings: Float!
+}
+
 type Query {
-  sayHello: String!
   users: [User!]!
   getUserByEmail(email: String!): User!
+  numFollowers: NumFollowers!
+  numFollowings: NumFollowings!
   articles: [Article!]!
   articlesByUser: [Article!]!
   articleDetail: Article!
