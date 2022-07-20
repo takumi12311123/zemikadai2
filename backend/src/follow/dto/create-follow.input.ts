@@ -1,6 +1,7 @@
-import { Field, ObjectType } from '@nestjs/graphql';
+import { InputType } from '@nestjs/graphql';
+import { Field } from '@nestjs/graphql';
 
-@ObjectType()
+@InputType()
 export class CreateFollowInput {
   @Field(() => String)
   followerId: string;
