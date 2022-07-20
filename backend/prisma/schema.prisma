@@ -19,8 +19,8 @@ model User {
   updatedAt DateTime   @updatedAt
   articles Article[]
   favoritedArticles Article[] @relation(name: "favoritedArticles")
-  followees Follow[] @relation(name: "followees")
-  followers Follow[] @relation(name: "followers")
+  NumFollowers Follow[]
+  Numfollowings Follow[] @relation(name: "followers")
 }
 
 
@@ -39,7 +39,7 @@ model Follow {
   id        String     @id @default(uuid())
   createdAt DateTime   @default(now())
   updatedAt DateTime   @updatedAt
-  followee      User   @relation(name: "followees", fields: [followeeId], references: [id])
+  followee      User   @relation(fields: [followeeId], references: [id])
   followeeId    String
   follower      User   @relation(name: "followers", fields: [followerId], references: [id])
   followerId    String

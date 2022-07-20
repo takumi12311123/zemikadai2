@@ -37,8 +37,8 @@ type Query {
   articles: [Article!]!
   articlesByUser: [Article!]!
   articleDetail: Article!
+  followings: [Follow!]!
   followers: [Follow!]!
-  followees: [Follow!]!
 }
 
 type Mutation {

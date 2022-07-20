@@ -14,7 +14,7 @@ export class FollowResolver {
 
   // followerの取得
   @Query(() => [Follow])
-  async followers(@CurrentUser() user: CurrentUser) {
+  async followings(@CurrentUser() user: CurrentUser) {
     return this.followService.getFollowers({
       followerId: user.id,
     });
@@ -22,7 +22,7 @@ export class FollowResolver {
 
   // followeeの取得
   @Query(() => [Follow])
-  async followees(@CurrentUser() user: CurrentUser) {
+  async followers(@CurrentUser() user: CurrentUser) {
     return this.followService.getFollowees({
       followeeId: user.id,
     });
