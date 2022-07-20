@@ -7,6 +7,7 @@ import ApolloClient from "../../graphql/client";
 const CREATE_ARTICLE = gql`
   mutation CreateMutation($title: String!, $detail: String!) {
     createArticle(createArticleInput: { title: $title, detail: $detail }) {
+      id
       title
       detail
     }
