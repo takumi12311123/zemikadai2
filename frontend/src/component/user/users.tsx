@@ -3,6 +3,7 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 // import pic from "/home/takuaka/zemikadai2/frontend/src/component/images/user.png"
 import { faker } from "@faker-js/faker";
+import AddArticleButton from "../button/AddArticleButton";
 
 function Users(): any {
   const pic = faker.image.avatar();
@@ -37,5 +38,6 @@ function Users(): any {
       </Card>
     )
   );
+  <AddArticleButton />
 }
 export default Users;

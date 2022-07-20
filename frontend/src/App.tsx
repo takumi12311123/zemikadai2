@@ -5,6 +5,8 @@ import client from "./graphql/client";
 import { Header } from "./component/header/header";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import UserArticles from "./component/user/UserArticles";
+import AddArticlePage from "./component/article/AddArticle";
+import AddArticle from "./component/article/AddArticle";
 
 function App() {
   return (
@@ -14,6 +16,7 @@ function App() {
         <Routes>
           <Route path={`/`} element={<Users />} />
           <Route path={`/user`} element={<UserArticles />} />
+          <Route path={`/article/create`} element={<AddArticle />} />
         </Routes>
       </BrowserRouter>
     </ApolloProvider>
