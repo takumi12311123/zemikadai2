@@ -6,6 +6,9 @@ import { CreateUserInput } from './dto/create-user.input';
 import { UpdateUserInput } from './dto/update-user.input';
 import { CurrentUser } from 'src/auth/current-user.decorator';
 import { Article } from 'src/article/dto/article.model';
+import { NumFollowers } from './dto/numFollower.input';
+import { NumFollowings } from './dto/numFollowings.input';
+import { Follow } from 'src/follow/dto/follow.model';
 
 @Resolver(() => User)
 export class UsersResolver {
@@ -13,11 +16,6 @@ export class UsersResolver {
     private prisma: PrismaService,
     private usersService: UsersService,
   ) {}
-
-  @Query(() => String)
-  sayHello(): string {
-    return 'Hello World!';
-  }
 
   @Query(() => [User])
   async users() {
@@ -49,5 +47,25 @@ export class UsersResolver {
       email: updateUserInput.email,
       description: updateUserInput.description,
     });
+  }
+
+  @Query(() => NumFollowers, { name: 'numFollowers' })
+  async getNumOfFollowers(@CurrentUser() user: CurrentUser) {
+    const numberOfFollowers = await this.usersService.getNumOfFollower({
+      userId: user.id,
+    });
+    return {
+      numberOfFollowers,
+    };
+  }
+
+  @Query(() => NumFollowings, { name: 'numFollowings' })
+  async getNumOfFollowing(@CurrentUser() user: CurrentUser) {
+    const numberOfFollowings = await this.usersService.getNumOfFollowing({
+      userId: user.id,
+    });
+    return {
+      numberOfFollowings,
+    };
   }
 }

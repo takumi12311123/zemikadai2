@@ -43,4 +43,56 @@ export class UsersService {
       },
     });
   }
+
+  async getAllFollower({ userId }: { userId: string }) {
+    const result = await this.prisma.user.findMany({
+      where: {
+        id: userId,
+      },
+      select: {
+        NumFollowers: true,
+      },
+    });
+    return result
+  }
+
+  getAllFollowings({ userId }: { userId: string }) {
+    return this.prisma.user.findMany({
+      where: {
+        id: userId,
+      },
+    });
+  }
+
+  async getNumOfFollower({ userId }: { userId: string }) {
+    const result = await this.prisma.user.findUnique({
+      where: {
+        id: userId,
+      },
+      select: {
+        _count: {
+          select: {
+            NumFollowers: true,
+          },
+        },
+      },
+    });
+    return result._count.NumFollowers;
+  }
+
+  async getNumOfFollowing({ userId }: { userId: string }) {
+    const result = await this.prisma.user.findUnique({
+      where: {
+        id: userId,
+      },
+      select: {
+        _count: {
+          select: {
+            Numfollowings: true,
+          },
+        },
+      },
+    });
+    return result._count.Numfollowings;
+  }
 }

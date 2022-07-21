@@ -8,8 +8,8 @@ export class FollowService {
   getFollowers({ followerId }: { followerId: string }) {
     return this.prisma.follow.findMany({
       where: { followerId },
-      select: {
-        followeeId: true,
+      orderBy: {
+        createdAt: 'desc',
       },
     });
   }
