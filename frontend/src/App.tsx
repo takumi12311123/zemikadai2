@@ -8,11 +8,13 @@ import UserArticles from "./component/user/UserArticles";
 import AddArticlePage from "./component/article/AddArticle";
 import AddArticle from "./component/article/AddArticle";
 import AddArticleButton from "./component/button/AddArticleButton";
+import { NumberHeader } from "./component/follow/NumberHeader";
 
 function App() {
   return (
     <ApolloProvider client={client}>
       <Header />
+      <NumberHeader />
       <BrowserRouter>
         <Routes>
           <Route path={`/`} element={<Users />} />

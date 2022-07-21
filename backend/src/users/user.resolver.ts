@@ -61,11 +61,11 @@ export class UsersResolver {
 
   @Query(() => NumFollowings, { name: 'numFollowings' })
   async getNumOfFollowing(@CurrentUser() user: CurrentUser) {
-    const numberOfFollowers = await this.usersService.getNumOfFollowing({
+    const numberOfFollowings = await this.usersService.getNumOfFollowing({
       userId: user.id,
     });
     return {
-      numberOfFollowers,
+      numberOfFollowings,
     };
   }
 }
