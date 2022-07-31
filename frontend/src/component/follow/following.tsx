@@ -1,4 +1,5 @@
 import { gql, useQuery } from "@apollo/client";
+import { Card } from "react-bootstrap";
 import { Loading } from "../Loading";
 
 export const Following = () => {
@@ -18,5 +19,16 @@ export const Following = () => {
   }
   const num = data.numFollowings.numberOfFollowings;
 
-  return <div>Followings {num}</div>;
+  return (
+    <div style={{ float: "left", display: "inline-block" }}>
+      <Card style={{ width: "35rem" }}>
+        <Card.Body>
+          <Card.Title>Following</Card.Title>
+          <Card.Title className="mb-2 text-muted" style={{ float: "right" }}>
+            {num}
+          </Card.Title>
+        </Card.Body>
+      </Card>
+    </div>
+  );
 };

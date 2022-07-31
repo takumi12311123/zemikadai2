@@ -1,17 +1,34 @@
 import { gql, useQuery } from "@apollo/client";
 import React from "react";
+import { Card } from "react-bootstrap";
+import { Loading } from "../Loading";
 
 export const Follower = () => {
   const GET_FOLLOWERS = gql`
-  query numOfFollowers{
-    numFollowers{numberOfFollowers}
-  }
+    query numOfFollowers {
+      numFollowers {
+        numberOfFollowers
+      }
+    }
   `;
-  const { loading, error, data } = useQuery(GET_FOLLOWERS,{fetchPolicy: "no-cache"});
-  // const numberOfFollowers = data.numFollowers.numberOfFollowers;
-  // console.log(numberOfFollowers)
+  const { loading, error, data } = useQuery(GET_FOLLOWERS, {
+    fetchPolicy: "no-cache",
+  });
+  if (loading) {
+    return <Loading />;
+  }
+  const num = data.numFollowers.numberOfFollowers;
+
   return (
-    // <div>follower {numberOfFollowers}</div>
-    <div>Follower</div>
+    <div style={{ float: "left", display: "inline-block" }}>
+      <Card style={{ width: "35rem" }}>
+        <Card.Body>
+          <Card.Title>Follower</Card.Title>
+          <Card.Title className="mb-2 text-muted" style={{ float: "right" }}>
+            {num}
+          </Card.Title>
+        </Card.Body>
+      </Card>
+    </div>
   );
 };
