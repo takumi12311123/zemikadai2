@@ -1,5 +1,10 @@
 import React from "react";
 
 export const UserDetailButton = () => {
-  return <div>UserDetailButton</div>;
+
+  const getUserDetail = () => {
+    
+  };
+
+  return <div onClick={getUserDetail}>UserDetailButton</div>;
 };
