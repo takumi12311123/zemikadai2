@@ -1,18 +1,22 @@
 import { gql, useQuery } from "@apollo/client";
-import React from "react";
+import { Loading } from "../Loading";
 
 export const Following = () => {
   const GET_FOLLOWING = gql`
-    query getNumFollowings {
+    query {
       numFollowings {
         numberOfFollowings
       }
     }
   `;
 
-  const { loading, error, data } = useQuery(GET_FOLLOWING);
-  // const numberOfFollowings = data.numFollowings.numberOfFollowings;
-  // console.log(numberOfFollowings);
-  // return <div>Following {numberOfFollowings}</div>;
-  return <>Following</>;
+  const { loading, error, data } = useQuery(GET_FOLLOWING, {
+    fetchPolicy: "no-cache",
+  });
+  if (loading) {
+    return <Loading />;
+  }
+  const num = data.numFollowings.numberOfFollowings;
+
+  return <div>Followings {num}</div>;
 };

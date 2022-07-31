@@ -11,8 +11,6 @@ import {
 } from "@apollo/client";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-
-
 const client = new ApolloClient({
   uri: "https://flyby-gateway.herokuapp.com/",
   cache: new InMemoryCache(),

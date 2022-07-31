@@ -6,13 +6,12 @@ export const Follower = () => {
   query numOfFollowers{
     numFollowers{numberOfFollowers}
   }
-  
   `;
-  const { loading, error, data } = useQuery(GET_FOLLOWERS);
+  const { loading, error, data } = useQuery(GET_FOLLOWERS,{fetchPolicy: "no-cache"});
   // const numberOfFollowers = data.numFollowers.numberOfFollowers;
   // console.log(numberOfFollowers)
   return (
     // <div>follower {numberOfFollowers}</div>
-    <div>follower</div>
+    <div>Follower</div>
   );
 };
