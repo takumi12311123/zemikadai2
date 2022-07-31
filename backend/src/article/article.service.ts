@@ -15,7 +15,7 @@ export class ArticleService {
         userId,
       },
       orderBy: {
-        createdAt: "desc",
+        createdAt: 'desc',
       },
     });
   }
@@ -24,6 +24,14 @@ export class ArticleService {
     return this.prisma.article.findMany({
       where: {
         id,
+      },
+    });
+  }
+
+  getAllArticlesByUserId({ userId }: { userId: string }) {
+    return this.prisma.article.findMany({
+      where: {
+        userId,
       },
     });
   }

@@ -26,9 +26,16 @@ export class ArticleResolver {
 
   // 記事の詳細取得
   @Query(() => Article)
-  async articleDetail(id) {
+  async articleDetail(@Args('id') id: string) {
     return this.articleService.getArticleDetail({
       id,
+    });
+  }
+
+  @Query(() => [Article])
+  async allArticlesByUserId(@Args('userId') userId: string) {
+    return this.articleService.getAllArticlesByUserId({
+      userId,
     });
   }
 

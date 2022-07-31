@@ -45,7 +45,8 @@ type Query {
   numFollowings: NumFollowings!
   articles: [Article!]!
   articlesByUser: [Article!]!
-  articleDetail: Article!
+  articleDetail(id: String!): Article!
+  allArticlesByUserId(userId: String!): [Article!]!
   followings: [Follow!]!
   followers: [Follow!]!
 }
