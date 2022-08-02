@@ -3,8 +3,10 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { faker } from "@faker-js/faker";
 import { FollowButton } from "../button/FollowButton";
+import { UserDetailButton } from "../button/UserDetailButton";
 
 function Users(): any {
+
   const pic = faker.image.avatar();
   const EXCHANGE_RATES = gql`
     query GetUsers {
@@ -31,7 +33,10 @@ function Users(): any {
           <FollowButton />
           <Card.Title>{name}</Card.Title>
           <Card.Text>{description}</Card.Text>
-          <Button variant="primary">詳しく見る</Button>
+          {/* TODO ここのbuttonを仕様変更する必要がある */}
+          <Button className={id} variant="primary">
+            詳しく見る
+          </Button>
         </Card.Body>
       </Card>
     )
