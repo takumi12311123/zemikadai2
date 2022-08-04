@@ -1,5 +1,4 @@
 import { gql, useQuery } from "@apollo/client";
-import React from "react";
 import { Button } from "react-bootstrap";
 
 export const FollowButton = () => {
@@ -17,7 +16,7 @@ export const FollowButton = () => {
   `;
 
   const { loading, error, data } = useQuery(CHECK_FOLLOW);
-  // if (loading) return <p>Loading...</p>;
+  if (loading) return <Loading />;
   // if (error) return `Error : ${error}`;
 
   return (

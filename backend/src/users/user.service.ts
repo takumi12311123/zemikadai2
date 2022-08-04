@@ -1,11 +1,11 @@
-import { forwardRef, Inject, Injectable } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
 
 @Injectable()
 export class UsersService {
   constructor(private prisma: PrismaService) {}
 
-  getUsers({}: {}) {
+  getUsers() {
     return this.prisma.user.findMany();
   }
 
@@ -53,7 +53,7 @@ export class UsersService {
         NumFollowers: true,
       },
     });
-    return result
+    return result;
   }
 
   getAllFollowings({ userId }: { userId: string }) {
