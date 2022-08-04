@@ -21,7 +21,7 @@ export const Following = () => {
 
   return (
     <div style={{ float: "left", display: "inline-block" }}>
-      <Card style={{ width: "35rem" }}>
+      <Card style={{ height: "50%" }}>
         <Card.Body>
           <Card.Title>Following</Card.Title>
           <Card.Title className="mb-2 text-muted" style={{ float: "right" }}>
