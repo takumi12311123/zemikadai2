@@ -1,4 +1,4 @@
-import { useQuery, gql } from "@apollo/client";
+import { gql, useQuery } from "@apollo/client";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import pic from "/home/takuaka/zemikadai2/frontend/src/component/images/user.png";

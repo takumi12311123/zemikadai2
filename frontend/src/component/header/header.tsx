@@ -1,7 +1,7 @@
 import Container from "react-bootstrap/Container";
-import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import { BrowserRouter, Link, Routes, Route } from "react-router-dom";
+import Navbar from "react-bootstrap/Navbar";
+import { BrowserRouter } from "react-router-dom";
 
 export const Header = () => {
   const user = "takumi akasaka";

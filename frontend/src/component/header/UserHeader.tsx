@@ -1,7 +1,5 @@
-import React from "react";
-
 const UserHeader = () => {
-  return <div></div>;
+  return <div>UserHeader作成中</div>;
 };
 
 export default UserHeader;
