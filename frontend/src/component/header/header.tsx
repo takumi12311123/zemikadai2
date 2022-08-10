@@ -20,6 +20,7 @@ export const Header = () => {
               Signed in as: <a href="#login">{user}</a>
             </Navbar.Text>
           </Navbar.Collapse>
+          {/* ここに、userのfollowingとfollowerを作成したい */}
         </Container>
       </Navbar>
     </BrowserRouter>
