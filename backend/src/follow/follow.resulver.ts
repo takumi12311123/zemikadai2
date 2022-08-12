@@ -1,8 +1,8 @@
-import { Args, Mutation, Resolver, Query } from '@nestjs/graphql';
-import { PrismaService } from 'src/prisma/prisma.service';
+import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
 import { CurrentUser } from 'src/auth/current-user.decorator';
-import { Follow } from './dto/follow.model';
+import { PrismaService } from 'src/prisma/prisma.service';
 import { CreateFollowInput } from './dto/create-follow.input';
+import { Follow } from './dto/follow.model';
 import { FollowService } from './follow.service';
 
 @Resolver(() => Follow)

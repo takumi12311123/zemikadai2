@@ -1,14 +1,12 @@
-import { Args, Mutation, Resolver, Query } from '@nestjs/graphql';
-import { User } from './dto/user.model';
-import { PrismaService } from 'src/prisma/prisma.service';
-import { UsersService } from './user.service';
-import { CreateUserInput } from './dto/create-user.input';
-import { UpdateUserInput } from './dto/update-user.input';
+import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
 import { CurrentUser } from 'src/auth/current-user.decorator';
-import { Article } from 'src/article/dto/article.model';
+import { PrismaService } from 'src/prisma/prisma.service';
+import { CreateUserInput } from './dto/create-user.input';
 import { NumFollowers } from './dto/numFollower.input';
 import { NumFollowings } from './dto/numFollowings.input';
-import { Follow } from 'src/follow/dto/follow.model';
+import { UpdateUserInput } from './dto/update-user.input';
+import { User } from './dto/user.model';
+import { UsersService } from './user.service';
 
 @Resolver(() => User)
 export class UsersResolver {
@@ -19,7 +17,7 @@ export class UsersResolver {
 
   @Query(() => [User])
   async users() {
-    return this.usersService.getUsers({});
+    return this.usersService.getUsers();
   }
 
   @Query(() => User)
