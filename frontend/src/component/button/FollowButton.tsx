@@ -1,17 +1,12 @@
 import { gql, useQuery } from "@apollo/client";
 import { Button } from "react-bootstrap";
+import { Loading } from "../Loading";
 
 export const FollowButton = () => {
   const CHECK_FOLLOW = gql`
-    query GetUsers {
-      users {
-        id
-        name
-        description
-        email
-        createdAt
-        updatedAt
-      }
+    query followers(){
+      id
+      name
     }
   `;
 
