@@ -1,7 +1,5 @@
 export const UserDetailButton = () => {
-
-  const getUserDetail = () => {
-  };
+  const getUserDetail = () => {};
 
   return <div onClick={getUserDetail}>UserDetailButton</div>;
 };
