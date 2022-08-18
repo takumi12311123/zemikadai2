@@ -1,5 +1,13 @@
-export const UserDetailButton = () => {
-  const getUserDetail = () => {};
+import { gql } from "@apollo/client";
 
-  return <div onClick={getUserDetail}>UserDetailButton</div>;
+export const UserDetailButton = () => {
+  function getUserDetail(userId: string): any {
+    gql``;
+    // userDetailを取得するgqlをここに置く
+    // どうやって、userIdを取得するか考える
+    // userIdをkeyに置きたい
+    return;
+  }
+
+  return <div onClick={getUserDetail("user-id-1")}>UserDetailButton</div>;
 };
