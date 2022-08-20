@@ -22,9 +22,12 @@ function UserArticles(): any {
   if (error) return <Error />;
 
   function articleId(e: any) {
-    console.log(e.target.id);
+    console.log(e.target.className);
     return;
   }
+
+  // これのeにidを押したボタンのやつ格納できる
+  // onClickで、これを発火させる
 
   return data.articlesByUser.map(
     ({ id, title, detail, createdAt, updatedAt }: any) => (
