@@ -11,9 +11,6 @@ const CREATE_ARTICLE = gql`
   }
 `;
 
-// これなら動いているから、ふつうにデータ渡せてないんだと思う
-// inputから渡す方法模索すべし
-
 const AddArticle = () => {
   const [formState, setFormState] = useState({
     title: "",
