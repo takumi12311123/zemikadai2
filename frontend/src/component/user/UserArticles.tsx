@@ -1,6 +1,8 @@
 import { gql, useQuery } from "@apollo/client";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import { Error } from "../Error";
+import { Loading } from "../Loading";
 import pic from "/home/takuaka/zemikadai2/frontend/src/component/images/user.png";
 
 function UserArticles(): any {
@@ -16,8 +18,13 @@ function UserArticles(): any {
     }
   `;
   const { loading, error, data } = useQuery(EXCHANGE_RATES);
-  if (loading) return <p>Loading...</p>;
-  if (error) return `Error : ${error}`;
+  if (loading) return <Loading />;
+  if (error) return <Error />;
+
+  function articleId(e: any) {
+    console.log(e.target.id);
+    return;
+  }
 
   return data.articlesByUser.map(
     ({ id, title, detail, createdAt, updatedAt }: any) => (
