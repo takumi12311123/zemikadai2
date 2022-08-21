@@ -19,6 +19,12 @@ function Users(): any {
     }
   `;
 
+  function userId(e: any) {
+    console.log(e.target.className);
+    // userIDをボタンから入手
+    return;
+  }
+
   const { loading, error, data } = useQuery(EXCHANGE_RATES);
   if (loading) return <p>Loading...</p>;
   if (error) return `Error : ${error}`;
