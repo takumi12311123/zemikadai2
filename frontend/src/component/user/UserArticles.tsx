@@ -36,7 +36,9 @@ function UserArticles(): any {
         <Card.Body>
           <Card.Title>{title}</Card.Title>
           <Card.Text>{detail}</Card.Text>
-          <Button style={{ float: "right" }}>いいね!</Button>
+          <Button style={{ float: "right" }} className={id}>
+            いいね!
+          </Button>
           <Card.Text>{createdAt}</Card.Text>
         </Card.Body>
       </Card>

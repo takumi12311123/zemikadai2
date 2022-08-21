@@ -20,7 +20,7 @@ export const FollowButton = () => {
     buttonName = "unFollow";
   }
 
-  return (
+  return data.followButton.map(
     <Button
       className="followButton"
       variant="primary"
