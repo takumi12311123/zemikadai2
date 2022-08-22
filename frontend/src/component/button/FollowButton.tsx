@@ -15,8 +15,10 @@ export const FollowButton = () => {
   if (loading) return <Loading />;
   if (error) return <Error />;
 
+  // ここよくないと思う
+  // どうにかして、follow済みなのかを把握して、ボタンを変えたい
   let buttonName = "follow";
-  if (data) {
+  if (data.id) {
     buttonName = "unFollow";
   }
 
