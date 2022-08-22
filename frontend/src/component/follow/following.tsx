@@ -1,5 +1,6 @@
 import { gql, useQuery } from "@apollo/client";
 import { Card } from "react-bootstrap";
+import { Error } from "../Error";
 import { Loading } from "../Loading";
 
 export const Following = () => {
@@ -16,6 +17,9 @@ export const Following = () => {
   });
   if (loading) {
     return <Loading />;
+  }
+  if (error) {
+    return <Error />;
   }
   const num = data.numFollowings.numberOfFollowings;
 
