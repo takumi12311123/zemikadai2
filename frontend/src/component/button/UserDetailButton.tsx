@@ -6,6 +6,7 @@ export const UserDetailButton = () => {
     // userDetailを取得するgqlをここに置く
     // どうやって、userIdを取得するか考える
     // userIdをkeyに置きたい
+    // この問題を送った側で処理するようになるかも
     return;
   }
 
