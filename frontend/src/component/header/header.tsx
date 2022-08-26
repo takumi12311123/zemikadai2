@@ -2,6 +2,8 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { BrowserRouter } from "react-router-dom";
+import { Follower } from "../follow/follower";
+import { Following } from "../follow/following";
 
 export const Header = () => {
   const user = "takumi akasaka";
@@ -21,6 +23,8 @@ export const Header = () => {
             </Navbar.Text>
           </Navbar.Collapse>
           {/* ここに、userのfollowingとfollowerを作成したい */}
+          <Follower></Follower>
+          <Following></Following>
         </Container>
       </Navbar>
     </BrowserRouter>
