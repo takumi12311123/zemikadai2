@@ -23,8 +23,8 @@ export const Header = () => {
             </Navbar.Text>
           </Navbar.Collapse>
           {/* ここに、userのfollowingとfollowerを作成したい */}
-          <Follower></Follower>
-          <Following></Following>
+          <Follower />
+          <Following />
         </Container>
       </Navbar>
     </BrowserRouter>

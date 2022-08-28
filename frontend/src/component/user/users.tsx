@@ -6,7 +6,7 @@ import { FollowButton } from "../button/FollowButton";
 
 function Users(): any {
   const pic = faker.image.avatar();
-  const EXCHANGE_RATES = gql`
+  const getUsers = gql`
     query GetUsers {
       users {
         id
@@ -19,13 +19,27 @@ function Users(): any {
     }
   `;
 
-  function userId(e: any) {
+  const getUser = gql`
+    query GetUsers {
+      users {
+        id
+        name
+        description
+        email
+        createdAt
+        updatedAt
+      }
+    }
+  `;
+
+  function getUserId(e: any) {
     console.log(e.target.className);
     // userIDをボタンから入手
+
     return;
   }
 
-  const { loading, error, data } = useQuery(EXCHANGE_RATES);
+  const { loading, error, data } = useQuery(getUsers);
   if (loading) return <p>Loading...</p>;
   if (error) return `Error : ${error}`;
 
@@ -37,7 +51,7 @@ function Users(): any {
         <Card.Title>{name}</Card.Title>
         <Card.Text>{description}</Card.Text>
         {/* TODO ここのbuttonを仕様変更する必要がある */}
-        <Button className={id} variant="primary">
+        <Button onClick={getUserId} className={id} variant="primary">
           詳しく見る
         </Button>
       </Card.Body>
