@@ -1,7 +1,9 @@
 overwrite: true
-schema: './github.schema.graphql'
-documents: 'src/graphql/*.gql'
+schema: http://localhost:3000/graphql
 generates:
-  src/generated/types.ts:
+  graphql/generated/graphql.tsx:
     plugins:
-      - typescript
+      - 'typescript'
+  ./graphql.schema.json:
+    plugins:
+      - 'introspection'
