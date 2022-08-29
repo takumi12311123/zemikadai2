@@ -1,0 +1,9 @@
+overwrite: true
+schema: http://localhost:3000/graphql
+generates:
+  graphql/generated/graphql.tsx:
+    plugins:
+      - 'typescript'
+  ./graphql.schema.json:
+    plugins:
+      - 'introspection'
