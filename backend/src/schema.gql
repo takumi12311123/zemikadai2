@@ -21,6 +21,14 @@ type Follow {
   updatedAt: DateTime!
 }
 
+type NumFollowers {
+  numberOfFollowers: Float!
+}
+
+type NumFollowings {
+  numberOfFollowings: Float!
+}
+
 type User {
   id: ID!
   name: String!
@@ -28,14 +36,6 @@ type User {
   description: String!
   createdAt: DateTime!
   updatedAt: DateTime!
-}
-
-type NumFollowers {
-  numberOfFollowers: Float!
-}
-
-type NumFollowings {
-  numberOfFollowings: Float!
 }
 
 type Query {

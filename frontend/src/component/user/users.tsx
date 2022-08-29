@@ -19,24 +19,19 @@ function Users(): any {
     }
   `;
 
-  const getUser = gql`
-    query GetUsers {
-      users {
-        id
-        name
-        description
-        email
-        createdAt
-        updatedAt
-      }
-    }
-  `;
-
   function getUserId(e: any) {
-    console.log(e.target.className);
-    // userIDをボタンから入手
-
-    return;
+    const getUser = gql`
+      query GetUser {
+        users {
+          id
+          name
+          description
+          email
+          createdAt
+          updatedAt
+        }
+      }
+    `;
   }
 
   const { loading, error, data } = useQuery(getUsers);
