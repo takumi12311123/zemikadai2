@@ -20,18 +20,7 @@ function Users(): any {
   `;
 
   function getUserId(e: any) {
-    const getUser = gql`
-      query GetUser {
-        users {
-          id
-          name
-          description
-          email
-          createdAt
-          updatedAt
-        }
-      }
-    `;
+    // eからidを取得する部分、githubから戻す
   }
 
   const { loading, error, data } = useQuery(getUsers);
