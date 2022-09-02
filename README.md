@@ -11,7 +11,7 @@
 ### docker stop
 ```sudo service docker stop```
 
-# backendについて
+# backendについて(backend下で起動)
 
 ### prisma studioの起動
 ```npx prisma studio```
