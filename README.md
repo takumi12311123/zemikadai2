@@ -39,7 +39,7 @@
 backendを立ち上げてからじゃないと動きません<br>
 gqlの接続先を<br>
 https://localhost:3000/graphql<br>
-にしているからです
+しているので、ポートがないとエラーになります
 
 なので、backendを立ち上げた後、ターミナルを分けてfrontend下で、npm startしてください
 
