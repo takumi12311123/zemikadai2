@@ -1,6 +1,6 @@
 # zemikadai2
 
-# dockerについて 
+# dockerについて  
 
 ### docker start
 ```sudo service docker start```
