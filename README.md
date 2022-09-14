@@ -8,6 +8,9 @@
 ### compose up
 ```docker-compose up```
 
+### compose up(build)
+```docker compose up --build```
+
 ### docker stop
 ```sudo service docker stop```
 
